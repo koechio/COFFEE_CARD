@@ -40,13 +40,16 @@ const Home({super.key});
       ),
     ),
       Expanded(
-        flex: 1,
+      flex: 1,
       child: Column(
         children: [Expanded(
           flex: 1,
           child: Container(
             color: Colors.black,
-          ),),
+            child:const Center( child: Text("Green Box", 
+            style: TextStyle(color: Colors.white, fontSize: 18),
+            ))),
+          ),
            Expanded(
           flex: 1,
           child: Container(
