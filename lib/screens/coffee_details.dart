@@ -14,7 +14,7 @@ class CoffeeDetailsPage extends StatelessWidget {
               flex: 3,
               child:  Image.asset(
                 "assets/images/Mocha.jpg" 
-                ,fit: BoxFit.cover,)
+                ,fit: BoxFit.fill,)
                 
                 ),
             Expanded(//This is the Title Section
@@ -41,12 +41,16 @@ class CoffeeDetailsPage extends StatelessWidget {
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.brown,
+                  foregroundColor: Colors.white,
+                  padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 15),
                 ),
                 onPressed: () {},
-                child: Text("This is the Buy Button")
-
-                
-                
+                child: Text(
+                  "Order",
+                style: TextStyle(
+                  fontSize:30,
+                  fontWeight: FontWeight.bold,
+                ) ), 
                 )),
           ],
 
