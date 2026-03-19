@@ -1,16 +1,23 @@
+import 'package:coffee_card/screens/coffee_details.dart';
 import 'package:flutter/material.dart';
 
 void main() {
   runApp(
     MaterialApp(
-      home: Scaffold(
+      title: "Coffee Page",
+      home: CoffeeDetailsPage(),
+      
+      
+      
+      /* home: Scaffold(
         appBar: AppBar(
-          title: Text("My Coffee Id"),
+          title: Text(""),
           backgroundColor: Colors.brown[700]!,
           centerTitle: true,
         ),
-        body: const Home(),
-      ),
+        body: SingleChildScrollView(
+          child: Home(),)
+      ), */
     ),
   );
 }
@@ -67,10 +74,12 @@ class Home extends StatelessWidget {
               children: [
                 Expanded(
                   flex: 1,
-                  child: CoffeeTile(
+                 child: GestureDetector(
+                  onTap: (){
+                  CoffeeTile(
                   name: "Espresso Coffee",
                   imagepath: 'assets/images/Mocha.jpg', 
-                  price: "30.00")
+                  price: "30.00");},)
                 ),
 
                 Expanded(
@@ -105,10 +114,14 @@ class CoffeeTile extends StatelessWidget {
                           children: [
                             Expanded(
                               flex: 3,
+                              child: ClipRRect(// To make it clickable
+                              borderRadius: BorderRadius.circular(10),
                               child: Image.asset(
                                 // the image in the coffee Tile
                                 imagepath,
                                 fit: BoxFit.cover,
+                              ),
+                     
                               ),
                             ),
 
@@ -159,3 +172,4 @@ class CoffeeTile extends StatelessWidget {
   
   }
 }
+
