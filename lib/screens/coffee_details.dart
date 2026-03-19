@@ -6,34 +6,31 @@ class CoffeeDetailsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(// Encloses the entire Page
-       padding: EdgeInsets.all(10),
+      body: SafeArea(// Encloses the entire Page
         child: Column(
           children: [
             Expanded(// This is the Image at the top of the Screen
               flex: 3,
               child:  Image.asset(
                 "assets/images/Mocha.jpg" 
-                ,fit: BoxFit.fill,)
+                ,fit: BoxFit.cover,)
                 
                 ),
             Expanded(//This is the Title Section
               flex: 1,
+              
               child: Center(
                 child: Text(
                 "Mocha Coffee",
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30,),
                 
-                ))),
+                ),),),
             Expanded(// This is the Body Section
               flex: 3,
+              child: SingleChildScrollView(
               child:  Text(
-                "A Mocha is the perfect middle ground between a dessert and a wake-up call, consisting of a rich foundation of espresso blended with sweet chocolate syrup or cocoa. This mixture is topped with silky steamed milk and a thin layer of microfoam, creating a velvety texture that masks the bitterness of the coffee with a deep, earthy sweetness. It is the ideal choice for someone who wants the high-caffeine kick of a latte but prefers the comforting, familiar flavor profile of dark chocolate.",
-                style: TextStyle(fontSize: 18,))
-              
-              
-              
-              
+                "Indulge in the perfect harmony of rich, velvety chocolate and bold, full-bodied espresso with our signature Mocha. Crafted from freshly roasted, ethically sourced Arabica beans, this classic favorite is carefully blended with premium dark cocoa and perfectly steamed milk, creating a luxuriously smooth and creamy texture. Topped with a generous swirl of house-made whipped cream and a light dusting of cocoa powder, every single sip offers a comforting balance of sweet and bittersweet flavors. Whether you need a strong morning pick-me-up to start your day or a cozy afternoon treat to unwind, our Mocha is designed to warm your soul and satisfy your sweet tooth. Experience the ultimate chocolate-coffee bliss.",
+                style: TextStyle(fontSize: 18,),),),
               
               ),
             Expanded( //This is the Buy Button
@@ -55,13 +52,13 @@ class CoffeeDetailsPage extends StatelessWidget {
           ],
 
 
-        ),
+        ),)
         
         
         
        
         
         
-      ));
+    );
   }
 }
