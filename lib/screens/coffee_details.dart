@@ -1,3 +1,4 @@
+import 'package:coffee_card/main.dart';
 import 'package:flutter/material.dart';
 
 class CoffeeDetailsPage extends StatelessWidget {
@@ -43,20 +44,54 @@ class CoffeeDetailsPage extends StatelessWidget {
               //This is the Title Section
               flex: 1,
 
-              child: Center(
-                child: Text(
-                  "Mocha Coffee",
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
-                ),
-              ),
+              child: BodyTitle(title: "Mocha Coffee"),
             ),
             Expanded(
-              // This is the Body Section
               flex: 5,
-              child: BodyText(
-                bodytext:
-                    "Indulge in the perfect harmony of rich, velvety chocolate and bold, full-bodied espresso with our signature Mocha. Crafted from freshly roasted, ethically sourced Arabica beans, this classic favorite is carefully blended with premium dark cocoa and perfectly steamed milk, creating a luxuriously smooth and creamy texture. Topped with a generous swirl of house-made whipped cream and a light dusting of cocoa powder, every single sip offers a comforting balance of sweet and bittersweet flavors. Whether you need a strong morning pick-me-up to start your day or a cozy afternoon treat to unwind, our Mocha is designed to warm your soul and satisfy your sweet tooth. Experience the ultimate chocolate-coffee bliss.",
+              child: Padding(
+                // To add some padding between the body of scrollable text and the edges of the phone
+                padding: EdgeInsets.all(10),
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      BodyText(
+                        bodytext:
+                            "Indulge in the perfect harmony of rich, velvety chocolate and bold, full-bodied espresso with our signature Mocha. Crafted from freshly roasted, ethically sourced Arabica beans, this classic favorite is carefully blended with premium dark cocoa and perfectly steamed milk, creating a luxuriously smooth and creamy texture. Topped with a generous swirl of house-made whipped cream and a light dusting of cocoa powder, every single sip offers a comforting balance of sweet and bittersweet flavors. Whether you need a strong morning pick-me-up to start your day or a cozy afternoon treat to unwind, our Mocha is designed to warm your soul and satisfy your sweet tooth. Experience the ultimate chocolate-coffee bliss.",
+                      ),
+                      const SizedBox(height: 20),
+
+                      SizedBox(
+                        // This holds the horizontal scrollable Coffee tiles after the body section
+                        height: 300,
+                        child: ListView(
+                          scrollDirection: Axis.horizontal,
+                          children: [
+                            CoffeeTile(
+                              name: "Espresso Coffee",
+                              imagepath: 'assets/images/Mocha.jpg',
+                              price: "30.00",
+                            ),
+
+                            CoffeeTile(
+                              name: "Espresso Coffee",
+                              imagepath: 'assets/images/Mocha.jpg',
+                              price: "30.00",
+                            ),
+
+                            CoffeeTile(
+                              name: "Espresso Coffee",
+                              imagepath: 'assets/images/Mocha.jpg',
+                              price: "30.00",
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ),
+
+              // This is the Body Section
             ),
             Padding(
               //This is the Buy Button
@@ -86,19 +121,29 @@ class BackButton extends StatelessWidget {
   }
 }
 
+class BodyTitle extends StatelessWidget {
+  // This widget holds the Title of the coffee
+  final String title;
+  const BodyTitle({super.key, required this.title});
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Text(
+        "Mocha Coffee",
+        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+      ),
+    );
+  }
+}
+
 class BodyText extends StatelessWidget {
   final String bodytext;
   const BodyText({super.key, required this.bodytext});
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      // To add some padding between the body of scrollable text and the edges of the phone
-      padding: EdgeInsets.all(10),
-      child: SingleChildScrollView(
-        child: Text(bodytext, style: TextStyle(fontSize: 20)),
-      ),
-    );
+    return Text(bodytext, style: TextStyle(fontSize: 20));
   }
 }
 
