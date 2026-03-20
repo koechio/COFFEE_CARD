@@ -12,7 +12,7 @@ class CoffeeDetailsPage extends StatelessWidget {
           children: [
             Expanded(
               // This is the Image at the top of the Screen
-              flex: 4,
+              flex: 5,
               child: ClipRRect(
                 // For rounded corners
                 borderRadius: const BorderRadius.only(
@@ -41,36 +41,52 @@ class CoffeeDetailsPage extends StatelessWidget {
             ),
             Expanded(
               // This is the Body Section
-              flex: 4,
+              flex: 5,
               child: Padding(// To add some padding between the body of scrollable text and the edges of the phone
                 padding: EdgeInsets.all(10),
                 child: SingleChildScrollView(
                   child: Text(
                     "Indulge in the perfect harmony of rich, velvety chocolate and bold, full-bodied espresso with our signature Mocha. Crafted from freshly roasted, ethically sourced Arabica beans, this classic favorite is carefully blended with premium dark cocoa and perfectly steamed milk, creating a luxuriously smooth and creamy texture. Topped with a generous swirl of house-made whipped cream and a light dusting of cocoa powder, every single sip offers a comforting balance of sweet and bittersweet flavors. Whether you need a strong morning pick-me-up to start your day or a cozy afternoon treat to unwind, our Mocha is designed to warm your soul and satisfy your sweet tooth. Experience the ultimate chocolate-coffee bliss.",
-                    style: TextStyle(fontSize: 18),
+                    style: TextStyle(fontSize: 20),
                   ),
                 ),
               ),
             ),
-            Expanded(
+            Padding(
               //This is the Buy Button
-              flex: 1,
+              padding: const EdgeInsets.all(0),
+
+
+              child: Center(
+              child: SizedBox(
+                width: MediaQuery.of(context).size.width*0.6,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.brown,
                   foregroundColor: Colors.white,
                   padding: const EdgeInsets.symmetric(
-                    horizontal: 100,
+                    horizontal: 50,
                     vertical: 15,
                   ),
                 ),
                 onPressed: () {},
-                child: Text(
-                  "Order",
-                  style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-                ),
-              ),
-            ),
+                child: const Row(
+                  
+                  children: [
+                  Text("Order",
+                  style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),),
+                  Spacer(flex: 1,),
+                  Text(
+                    "30.00",
+                  style: TextStyle(fontSize: 15, ),)
+
+
+
+                  ]
+                  
+                ),),
+              ),),)
+            
           ],
         ),
       ),
