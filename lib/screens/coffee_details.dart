@@ -6,14 +6,17 @@ class CoffeeDetailsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+     
       body: SafeArea(
         // Encloses the entire Page
         child: Column(
+          
           children: [
             Expanded(
               // This is the Image at the top of the Screen
               flex: 5,
-              child: ClipRRect(
+              child: Stack(
+              children: [ClipRRect(
                 // For rounded corners
                 borderRadius: const BorderRadius.only(
                   bottomLeft: Radius.circular(5),
@@ -27,7 +30,40 @@ class CoffeeDetailsPage extends StatelessWidget {
                   height: double.infinity,
                 ),
               ),
-            ),
+          Positioned(
+            top:15,
+            left: 15,
+            
+            child: CircleAvatar(
+              backgroundColor: Colors.white,
+              child: IconButton(
+                onPressed: (){}, 
+                icon: const Icon(Icons.arrow_back_ios_new, color: Colors.black)
+                
+                
+                )
+
+
+
+
+
+            )
+            
+            
+            )
+
+
+
+
+
+
+
+
+
+
+
+          ],),),
+
             Expanded(
               //This is the Title Section
               flex: 1,
