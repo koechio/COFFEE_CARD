@@ -1,24 +1,25 @@
-import 'package:coffee_card/screens/coffee_details.dart';
+//import 'package:coffee_card/screens/coffee_details.dart';
 import 'package:flutter/material.dart';
 
 void main() {
   runApp(
-    MaterialApp(
-      title: "Coffee Page",
-      home: CoffeeDetailsPage(),
+    //MaterialApp(
+     // title: "Coffee Page",
+      //home: CoffeeDetailsPage(),
       
       
-      
-      /* home: Scaffold(
+      MaterialApp(
+        title: "Coffee Page",
+       home: Scaffold(
         appBar: AppBar(
-          title: Text(""),
+          title: Text("Coffee Page"),
           backgroundColor: Colors.brown[700]!,
           centerTitle: true,
         ),
-        body: SingleChildScrollView(
-          child: Home(),)
-      ), */
-    ),
+       // body: SingleChildScrollView(
+          body: Home(),)
+      ), 
+   // ),
   );
 }
 
@@ -75,11 +76,11 @@ class Home extends StatelessWidget {
                 Expanded(
                   flex: 1,
                  child: GestureDetector(
-                  onTap: (){
-                  CoffeeTile(
+                  onTap: (){},
+                  child:CoffeeTile(
                   name: "Espresso Coffee",
                   imagepath: 'assets/images/Mocha.jpg', 
-                  price: "30.00");},)
+                  price: "30.00"),)
                 ),
 
                 Expanded(
