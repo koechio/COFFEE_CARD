@@ -1,27 +1,31 @@
 //import 'package:coffee_card/screens/coffee_details.dart';
+import 'package:coffee_card/screens/order_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
   runApp(
-    //MaterialApp(
-     // title: "Coffee Page",
-      //home: CoffeeDetailsPage(),
+    // MaterialApp(
+    //  title: "Coffee Page",
+    //   home: CoffeeDetailsPage(),
+     MaterialApp(
+     title: "Coffee Page",
+      home: OrderPage(),));
       
       
-      MaterialApp(
-        title: "Coffee Page",
-       home: Scaffold(
-        appBar: AppBar(
-          title: Text("Coffee Page"),
-          backgroundColor: Colors.brown[700]!,
-          centerTitle: true,
-        ),
-       // body: SingleChildScrollView(
-          body: Home(),
-          bottomNavigationBar: BottomNavBar(),),
-      ), 
-   // ),
-  );
+  //     MaterialApp(
+  //     title: "Coffee Page",
+  //     home: Scaffold(
+  //     appBar: AppBar(
+  //     title: Text("Coffee Page"),
+  //     backgroundColor: Colors.brown[700]!,
+  //     centerTitle: true,
+  //      ),
+       
+  //         body: Home(),
+  //        bottomNavigationBar: BottomNavBar(),),
+  //      ), 
+   
+  //);
 }
 
 class Home extends StatelessWidget {
